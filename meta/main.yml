@@ -1,0 +1,25 @@
+# -*- mode: yaml -*-
+# vim:ts=2:sw=2:ai:si:syntax=yaml
+---
+galaxy_info:
+  role_name: rust
+  author: Marko Samuli Kirves
+  description: Install Rust using rust-init
+  license: MIT
+  min_ansible_version: 2.6
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+        - stretch
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: MacOSX
+      versions:
+        - '10.13'
+        - '10.14'
+  galaxy_tags:
+    - rust
+dependencies: []

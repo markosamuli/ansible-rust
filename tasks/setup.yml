@@ -1,0 +1,14 @@
+---
+
+- name: Check if rustup has been installed
+  stat:
+    path: "{{ rustup_bin }}"
+  register: rustup_st
+
+- name: Run rustup-init depending on rustup installation status
+  set_fact:
+    rustup_install: "{% if rustup_st.stat.exists %}false{% else %}true{% endif %}"
+
+- name: Set rustup-init options
+  set_fact:
+    rustup_init_opts: "{% if not rust_modify_path %}--no-modify-path{% endif %}"

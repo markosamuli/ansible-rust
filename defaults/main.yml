@@ -1,0 +1,5 @@
+---
+# defaults file for markosamuli.rust
+
+# Modify path during install
+rust_modify_path: true

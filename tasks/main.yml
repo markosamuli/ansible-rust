@@ -1,0 +1,6 @@
+---
+
+- include_tasks: setup.yml
+
+- include_tasks: install.yml
+  when: rustup_install | bool

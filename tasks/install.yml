@@ -1,0 +1,22 @@
+---
+
+- name: Create temporary directory
+  tempfile:
+    state: directory
+    suffix: rustup
+  register: rustup_tmp
+
+- name: Download rustup-init script
+  get_url:
+    dest: "{{ rustup_tmp.path }}/rustup-init.sh"
+    url: https://sh.rustup.rs
+    checksum: "{{ rustup_checksum }}"
+
+- name: Run rustup-init script
+  command: "sh {{ rustup_tmp.path }}/rustup-init.sh -y {{ rustup_init_opts }}"
+  changed_when: true
+
+- name: Delete temporary directory
+  file:
+    path: "{{ rustup_tmp }}"
+    state: absent
