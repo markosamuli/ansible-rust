@@ -10,7 +10,6 @@
   get_url:
     dest: "{{ rustup_tmp.path }}/rustup-init.sh"
     url: https://sh.rustup.rs
-    checksum: "{{ rustup_checksum }}"
 
 - name: Run rustup-init script
   command: "sh {{ rustup_tmp.path }}/rustup-init.sh -y {{ rustup_init_opts }}"

@@ -4,6 +4,3 @@ rust_home: "{{ ansible_env.HOME }}"
 
 cargo_home: "{{ rust_home }}/.cargo"
 rustup_bin: "{{ rust_home }}/.cargo/bin/rustup"
-
-# sha256sum for rustup-init 1.20.2 (9d018c5e4 2019-10-15)
-rustup_checksum: "sha256:9a165af7c7446f07a978c6ab618dc5080bfe918b2bc88e9ad0f6df985b4e4dcb"
